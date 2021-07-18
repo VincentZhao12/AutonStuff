@@ -2,7 +2,7 @@
 
 ## Drivetrain Subsystem
 
-### motors and motor getters / setters
+### Motors and motor getters / setters
 - right master, follower, left master, ollower
 -  regular config
 - Voltage Compensation saturation voltage
@@ -11,19 +11,19 @@
 - setOutputVoltage
 - get motor speeds
 - [link for talons](http://devsite.ctr-electronics.com/maven/release/com/ctre/phoenix/Phoenix-latest.json)
-### gyro
+### Gyro
 - create gryo from AHRS
 - getter for robot heading
 - [link for AHRS](https://www.kauailabs.com/dist/frc/2021/navx_frc.json)
-### other classes needed, just initialize and add getter
+### Other classes needed, just initialize and add getter
 - DifferentialDriveKinematics
 - DifferentialDriveOdometry (no need forgetter for this)
 - Pose2d (used to store current position)
 - SimpleMotorFeedforward
 - PIDController (left and right)
 - TrajectoryConfig
-### other stuff
-- update pose in periodic
+### Other stuff
+- update current in periodic
 - log motor outputs and direction to smart dashboard
 
 ## FRC Characterization
