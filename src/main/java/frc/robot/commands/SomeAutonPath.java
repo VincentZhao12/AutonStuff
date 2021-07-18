@@ -42,7 +42,7 @@ public class SomeAutonPath extends SequentialCommandGroup {
         new Pose2d(2.9906033556662894, -2.059560042847262, new Rotation2d(-0.501628527419868, -1.6846488418902912)),
         new Pose2d(3.4605597416883156, -4.780360172448468, new Rotation2d(1.0141164119422688, -1.4098691580660807))
       ), 
-      Drivetrain.TRAJECTORY_CONFIG
+      drivetrain.getTrajectoryConfig()
     );
 
     /**

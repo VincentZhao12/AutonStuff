@@ -36,7 +36,6 @@ public class Drivetrain extends SubsystemBase {
   public static final double DRIVE_D = 0;
   public static final double MAX_VELOCITY_METERS = 1.5;
   public static final double MAX_ACCELERATION_METERS = 2.0;
-  public static final TrajectoryConfig TRAJECTORY_CONFIG = new TrajectoryConfig(MAX_VELOCITY_METERS, MAX_ACCELERATION_METERS);
   public static final int TIMEOUT_MS = 10;
   public static final int MAX_VOLTAGE = 10;
 
@@ -66,6 +65,8 @@ public class Drivetrain extends SubsystemBase {
   // PID Controllers
   PIDController rightController;
   PIDController leftController;
+
+  TrajectoryConfig trajectoryConfig;
 
   /** Creates a new Drivetrain. */
   public Drivetrain() {
@@ -128,11 +129,17 @@ public class Drivetrain extends SubsystemBase {
     rightController = new PIDController(DRIVE_P, DRIVE_I, DRIVE_D);
     leftController = new PIDController(DRIVE_P, DRIVE_I, DRIVE_D);
 
+    trajectoryConfig = new TrajectoryConfig(MAX_VELOCITY_METERS, MAX_ACCELERATION_METERS);
+
     // last generate trajectory with pathweaver
     // maxVelocity: 1.5
     // maxAcceleration: 2.0
     // wheelBase: 0.5883
     // gameName: Infinite Recharge
+  }
+
+  public TrajectoryConfig getTrajectoryConfig() {
+    return trajectoryConfig;
   }
 
   /**
